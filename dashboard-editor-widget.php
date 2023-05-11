@@ -4,9 +4,10 @@
  * @version 1.0.0
  */
 /**
- * Plugin Name: Nodes: Editor Widget
+ * Plugin Name: Nodes: Gutenberg Widget
  * Plugin URI: https://agora.xtec.cat/nodes/
- * Description: Extensió que genera un bloc al tauler d'administració per activar i desactivar l'editor Gutenberg.
+ * Description: Generates a widget in the admin dashboard to easily enable and disable the Gutenberg editor. Uses the
+ *              functionality provided by the plugin Advanced Editor Tools (previously TinyMCE Advanced).
  * Author: Toni Ginard
  * Version: 1.0.0
  * License: GPLv3
@@ -47,9 +48,12 @@ add_action('wp_dashboard_setup', function () {
 function dashboard_widget_editor() {
     $tadv_admin_settings = get_option(OPTIONS_KEY);
 
-    echo '<p>El Gutenberg és un editor de contingut modern i avançat que permet crear contingut visualment atractiu i altament 
-          personalitzat, utilitzant blocs de diferents tipus com ara títols, text, imatges, vídeos, diapositives, etc. 
-          i disposar-los de forma fàcil i intuïtiva.</p>';
+    echo '<p>El Gutenberg és un editor de contingut modern i avançat que permet crear contingut visualment atractiu i 
+             altament personalitzat, utilitzant blocs de diferents tipus com ara títols, text, imatges, vídeos, 
+             diapositives, etc. i disposar-los de forma fàcil i intuïtiva.</p>
+          <p>En cas de desactivar el Gutenberg, algun contingut generat amb aquest pot no visualitzar-se correctament 
+             amb l\'editor clàssic. Canviar a l\'editor clàssic només es recomana si cal canviar, dins d\'algun article 
+             o pàgina, contingut dels Carrusels o les Pestanyes.</p>';
 
     // Check if the option is set.
     if (strpos($tadv_admin_settings['options'], TINYMCE_KEY) !== false) {
