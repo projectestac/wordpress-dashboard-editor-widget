@@ -36,7 +36,7 @@ add_action('wp_dashboard_setup', function () {
     if (current_user_can('activate_plugins')) {
         wp_add_dashboard_widget(
             'dashboard_widget_editor',
-            'Editor Gutenberg',
+            'Edició per blocs',
             'dashboard_widget_editor'
         );
     }
@@ -51,8 +51,9 @@ function dashboard_widget_editor() {
     echo '<div style="display:flex; align-items:flex-start;">
               <div style="flex:1; margin-bottom:10px;">
                   <p>
-                      El Gutenberg és el nou editor de contingut del WordPress. Funciona amb blocs, cosa que permet tenir un 
-                      bon control sobre la maquetació dels continguts del web.
+                      L\'edició per blocs permet tenir un major control de com es mostra el contingut (maquetació), creant
+                      estructures més riques i atractives. S\'incorporen blocs extra com ara carrusels de notícies, línies
+                      de temps, comptadors enrere, etc.
                   </p>
                   <p>
                       <a href="https://projectes.xtec.cat/digital/serveis-digitals/nodes/editor-gutenberg/#compat-carrusels-pestanyes"
