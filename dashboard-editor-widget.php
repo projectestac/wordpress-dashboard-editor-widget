@@ -15,6 +15,7 @@
 
 const OPTIONS_KEY = 'tadv_admin_settings';
 const TINYMCE_KEY = 'replace_block_editor';
+const HYBRID_KEY = 'hybrid_mode';
 
 /**
  * If there is the specific GET parameter, activate or deactivate the editor.
@@ -86,6 +87,9 @@ function editor_widget_activate() {
 
     // Remove the keyword that disables the editor
     $tadv_admin_settings['options'] = str_replace(TINYMCE_KEY, '', $tadv_admin_settings['options']);
+
+    // Remove "hybrid_mode" from the options string
+    $tadv_admin_settings['options'] = str_replace(HYBRID_KEY, '', $tadv_admin_settings['options']);
 
     // Remove eventually resulting double commas
     $tadv_admin_settings['options'] = str_replace(',,', ',', $tadv_admin_settings['options']);
