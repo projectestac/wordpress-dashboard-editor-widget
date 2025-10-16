@@ -68,10 +68,10 @@ function dashboard_widget_editor() {
           </div>';
 
     // Check if the option is set.
-    if (strpos($tadv_admin_settings['options'], TINYMCE_KEY) !== false) {
-        echo '<a class="button button-primary" href=' . admin_url() . '?dashboard-editor-widget=activate>Activa</a>';
+    if (str_contains($tadv_admin_settings['options'], TINYMCE_KEY)) {
+        echo '<a class="button button-primary" href="' . admin_url() . '?dashboard-editor-widget=activate">Activa</a>';
     } else {
-        echo '<a class="button button-primary" href=' . admin_url() . '?dashboard-editor-widget=deactivate>Desactiva</a>';
+        echo '<a class="button button-primary" href="' . admin_url() . '?dashboard-editor-widget=deactivate">Desactiva</a>';
     }
 
     echo '&nbsp;&nbsp;&nbsp;';
